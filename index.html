@@ -8,40 +8,39 @@
     </head>
     <body>
         <h1>Calculator</h1>
-        <div class="bakcground"></div>
-            <div class="calculations">calculations</div>
-            <div class="result">results</div>
-            <div class="buttons">
-                <div class="row-five">
-                    <button type="button" class="data-operator clear light-grey">AC</button>
-                    <button type="button" class="data-operator clear light-grey">+/-</button>
-                    <button type="button" class="data-operator percentage light-grey">%</button>
-                    <button type="button" class="data-operator division orange">/</button>
-                </div>
-                <div class="row-four">
-                    <button type="button" class="data-number dark-grey">7</button>
-                    <button type="button" class="data-number dark-grey">8</button>
-                    <button type="button" class="data-number dark-grey">9</button>
-                    <button type="button" class="data-operator multiplication orange">x</button>
-                </div>
-                <div class="row-three">
-                    <button type="button" class="data-number dark-grey">4</button>
-                    <button type="button" class="data-number dark-grey">5</button>
-                    <button type="button" class="data-number dark-grey">6</button>
-                    <button class="data-operator subtraction orange">-</button>
-                </div>
-                <div class="row-two">
-                    <button type="button" class="data-number dark-grey">1</button>
-                    <button type="button" class="data-number dark-grey">2</button>
-                    <button type="button" class="data-number dark-grey">3</button>
-                    <button type="button" class="data-operator addition orange">+</button>
-                </div>
-                <div class="row-one">
-                    <button type="button" class="data-number dark-grey oval">0</button>
-                    <button type="button" class="data-operator decimal dark-grey">.</button>
-                    <button type="button" class="data-operator equal orange">=</button>
+        <div class="display">
+            <div class="text">
+                <div class="calculations">0</div>
+                <div class="result">0</div>
+            </div>
+            <div class="buttons-container">
+
+                    <button type="button" id="clear" class="data-operator clear light-gray">AC</button>
+                    <button type="button" id="plusminus" class="data-operator plusminus light-gray">+/-</button>
+                    <button type="button" id="%" class="data-operator percentage light-gray">%</button>
+                    <button type="button" id="/" class="data-operator division orange">/</button>
+
+                    <button type="button" id="7" class="data-number dark-gray">7</button>
+                    <button type="button" id="8" class="data-number dark-gray">8</button>
+                    <button type="button" id="9" class="data-number dark-gray">9</button>
+                    <button type="button" id="*" class="data-operator multiplication orange">x</button>
+
+                    <button type="button" id="4" class="data-number dark-gray">4</button>
+                    <button type="button" id="5" class="data-number dark-gray">5</button>
+                    <button type="button" id="6" class="data-number dark-gray">6</button>
+                    <button type="button" id="-" class="data-operator subtraction orange">-</button>
+
+                    <button type="button" id="1" class="data-number dark-gray">1</button>
+                    <button type="button" id="2" class="data-number dark-gray">2</button>
+                    <button type="button" id="3" class="data-number dark-gray">3</button>
+                    <button type="button" id="+" class="data-operator addition orange">+</button>
+
+                    <button type="button"  colspan=2 id="0" class="data-number dark-gray oval">0</button>
+                    <button type="button" id="." class="data-operator decimal dark-gray">.</button>
+                    <button type="button" id="=" class="data-operator equal orange">=</button>
 
                 </div>
-        </div>
+                </div>
+            </div>
     </body>
 </html>
