@@ -61,12 +61,15 @@ btnPoint.addEventListener('click', () => {
 });
 
 // splits userInput into numbers and signs into array
-function splitUserInput(userInput) {
-    return userInput.split(/(\D)/)
+function splitUserInput(string) {
+    let finalVersion = string.split(/(\D)/);
+    return finalVersion
+
 }
 //transfroms array into result
 function getResult(input) {
     let numbersArray = splitUserInput(input);
+    console.log(numbersArray)
     let finalResult = operate(numbersArray);
     return finalResult;
 }
@@ -83,7 +86,7 @@ const btnClear = document.querySelector('#clear');
 btnClear.addEventListener('click', () => {
     results.innerText = '';
     calculations.innerText = '';
-    userInput = 0;
+    userInput = '';
 });
 
 
