@@ -3,7 +3,7 @@
 
 //operator function
 
-function operate([num1, op, num2]) {
+function operate(num1, op, num2) {
     number1 = parseInt(num1);
     number2 = parseInt(num2)
     if (op === '+') {
@@ -66,37 +66,51 @@ function splitUserInput(string) {
     return finalVersion;
 }
 //array into result but also if there are 3 numbers and 2 operators
-function getResult(input) {
-    let numbersArray = splitUserInput(input);
-    if (numbersArray.length === 3) {
-        return operate(numbersArray);
-    }
-    else if (numbersArray.length > 3) {
-        let result1 = operate(numbersArray);
-        let longerNumbersArray = [result1, numbersArray[3], numbersArray[4]];
-        return operate(longerNumbersArray);
-    }
-}
-//transfroms array into result
-function getResult2(input) {
-    let numbersArray = splitUserInput(input); //we get split numbers
-    console.log(numbersArray);
-    let finalResult = operate(numbersArray);
-    console.log(typeof(numbersArray));
-    return finalResult;
-}
-//for loop!!!!!
+// function getResult(input) {
+//     let numbersArray = splitUserInput(input);
+//     if (numbersArray.length === 3) {
+//         return operate(numbersArray);
+//     }
+//     else if (numbersArray.length > 3) {
+//         let result1 = operate(numbersArray);
+//         let longerNumbersArray = [result1, numbersArray[3], numbersArray[4]];
+//         return operate(longerNumbersArray);
+//     }
+// }
+// //transfroms array into result
+// function getResult2(input) {
+//     let numbersArray = splitUserInput(input); //we get split numbers
+//     console.log(numbersArray);
+//     let finalResult = operate(numbersArray);
+//     console.log(typeof(numbersArray));
+//     return finalResult;
+// }
+// //for loop!!!!!
 
 function getResult3(input) {
-    let numbersArray = splitUserInput(input);
-
-    for (let i = 0; numbersArray.length > 0; i++) {
-
+    let numArr = splitUserInput(input);
+    let i = 1;
+    let result = numArr[0];
+    while (i < numArr.length) {
+        let op = numArr[i];
+        let num2 = numArr[i+1];
+        result = operate(result, op, num2);
+        i += 2;
     }
+    return result;
+    // for (let i = 0; numbersArray.length > 0; i++) {
+    //     if (numbersArray.length === 3) {
+    //         return operate(numbersArray);
+    //     }
+    //     else if (numbersArray.length > 3) {
+    //         let result1 = operate(numbersArray);
 
-
-    // for(let i = 0; numbersArray.length > i; i++) {
+    //         let longerNumbersArray = [result1, numbersArray[i+1], numbersArray[i]];
+    //         console.log(longerNumbersArray);
+    //         return operate(longerNumbersArray);
+    //     }
     // }
+
 }
 
 
