@@ -14,7 +14,7 @@ function operate([num1, op, num2]) {
         return number1 * number2;
     } else if (op === '/') {
         if(number2 === 0) {
-            return "hehe no"
+            return "you broke me </3"
         } else {
             return number1 / number2;
         }
@@ -28,7 +28,6 @@ let userInput = '';
 
 for (let i = 0; i < 10; i++) {
     const button = document.getElementById(`button-${i}`);
-
     button.addEventListener('click', () => {
         calculations.innerText += i
         userInput += i
@@ -63,21 +62,49 @@ btnPoint.addEventListener('click', () => {
 // splits userInput into numbers and signs into array
 function splitUserInput(string) {
     let finalVersion = string.split(/(\D)/);
-    return finalVersion
-
+    console.log(finalVersion);
+    return finalVersion;
 }
-//transfroms array into result
+//array into result but also if there are 3 numbers and 2 operators
 function getResult(input) {
     let numbersArray = splitUserInput(input);
-    console.log(numbersArray)
+    if (numbersArray.length === 3) {
+        return operate(numbersArray);
+    }
+    else if (numbersArray.length > 3) {
+        let result1 = operate(numbersArray);
+        let longerNumbersArray = [result1, numbersArray[3], numbersArray[4]];
+        return operate(longerNumbersArray);
+    }
+}
+//transfroms array into result
+function getResult2(input) {
+    let numbersArray = splitUserInput(input); //we get split numbers
+    console.log(numbersArray);
     let finalResult = operate(numbersArray);
+    console.log(typeof(numbersArray));
     return finalResult;
 }
+//for loop!!!!!
+
+function getResult3(input) {
+    let numbersArray = splitUserInput(input);
+
+    for (let i = 0; numbersArray.length > 0; i++) {
+
+    }
+
+
+    // for(let i = 0; numbersArray.length > i; i++) {
+    // }
+}
+
+
 
 //pressing "=" calls operate function
 const btnEqual = document.querySelector('#equal');
 btnEqual.addEventListener('click', () => {
-    let resultsOfOperations = getResult(userInput);
+    let resultsOfOperations = getResult3(userInput);
     results.innerText = resultsOfOperations;
 });
 
@@ -89,26 +116,8 @@ btnClear.addEventListener('click', () => {
     userInput = '';
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const buttons = document.querySelectorAll('#buttonsContainer');
-// buttons.addEventListener('click', () => {
-//     alert('i was alerted')
-// })
+//del button DEL
+const btnDel = document.querySelector('#delete');
+btnDel.addEventListener('click', () => {
+    calculations.innerText = (calculations.innerText).slice(0, -1);
+})
