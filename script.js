@@ -1,8 +1,3 @@
-//operate function -> takes in an operator (+ - / *) and 2 numbers
-//and then calls one of the functions on the numbers
-
-//operator function
-
 function operate(num1, op, num2) {
     number1 = parseInt(num1);
     number2 = parseInt(num2)
@@ -21,7 +16,7 @@ function operate(num1, op, num2) {
     }
 }
 
-//things that makes stuff (not results) appear on the screen
+
 let calculations = document.querySelector('#calculations');
 let results = document.querySelector('#result');
 let userInput = '';
@@ -65,27 +60,6 @@ function splitUserInput(string) {
     console.log(finalVersion);
     return finalVersion;
 }
-//array into result but also if there are 3 numbers and 2 operators
-// function getResult(input) {
-//     let numbersArray = splitUserInput(input);
-//     if (numbersArray.length === 3) {
-//         return operate(numbersArray);
-//     }
-//     else if (numbersArray.length > 3) {
-//         let result1 = operate(numbersArray);
-//         let longerNumbersArray = [result1, numbersArray[3], numbersArray[4]];
-//         return operate(longerNumbersArray);
-//     }
-// }
-// //transfroms array into result
-// function getResult2(input) {
-//     let numbersArray = splitUserInput(input); //we get split numbers
-//     console.log(numbersArray);
-//     let finalResult = operate(numbersArray);
-//     console.log(typeof(numbersArray));
-//     return finalResult;
-// }
-// //for loop!!!!!
 
 function getResult3(input) {
     let numArr = splitUserInput(input);
@@ -114,15 +88,12 @@ function getResult3(input) {
 }
 
 
-
-//pressing "=" calls operate function
 const btnEqual = document.querySelector('#equal');
 btnEqual.addEventListener('click', () => {
     let resultsOfOperations = getResult3(userInput);
     results.innerText = resultsOfOperations;
 });
 
-//clear button AC
 const btnClear = document.querySelector('#clear');
 btnClear.addEventListener('click', () => {
     results.innerText = '';
